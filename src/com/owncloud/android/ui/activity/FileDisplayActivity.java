@@ -62,6 +62,7 @@ import com.owncloud.android.authentication.AccountAuthenticator;
 import com.owncloud.android.datamodel.DataStorageManager;
 import com.owncloud.android.datamodel.FileDataStorageManager;
 import com.owncloud.android.datamodel.OCFile;
+import com.owncloud.android.files.InstantUploadUtil;
 import com.owncloud.android.files.services.FileDownloader;
 import com.owncloud.android.files.services.FileDownloader.FileDownloaderBinder;
 import com.owncloud.android.files.services.FileObserverService;
@@ -126,20 +127,27 @@ public class FileDisplayActivity extends FileActivity implements
     private static final int ACTION_SELECT_MULTIPLE_FILES = 2;
     
     private static final String TAG = FileDisplayActivity.class.getSimpleName();
+    private static boolean instantIsRegistered = false;
 
     private OCFile mWaitingToPreview;
     private Handler mHandler;
-    
+  
     private Configuration mNewConfigurationChangeToApplyOnStart;
     private boolean mStarted;
-
+    private InstantUploadUtil instantUploadPhoto;
+    private InstantUploadUtil instantUploadVideo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        
         Log_OC.d(TAG, "onCreate() start");
         super.onCreate(savedInstanceState);
         
+        
         mStarted = false;
         mHandler = new Handler();
+        
+        instantUploadPhoto = new InstantUploadUtil(getApplicationContext(),"photo");
+        instantUploadVideo = new InstantUploadUtil(getApplicationContext(),"video");
 
         /// Load of saved instance state: keep this always before initDataFromCurrentAccount()
         if(savedInstanceState != null) {
@@ -164,7 +172,13 @@ public class FileDisplayActivity extends FileActivity implements
         Intent observer_intent = new Intent(this, FileObserverService.class);
         observer_intent.putExtra(FileObserverService.KEY_FILE_CMD, FileObserverService.CMD_INIT_OBSERVED_LIST);
         startService(observer_intent);
-            
+
+        // instant upload observer for photo and video
+        if (!instantIsRegistered) {
+            getContentResolver().registerContentObserver(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, true, instantUploadPhoto);
+            getContentResolver().registerContentObserver(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, true, instantUploadVideo);
+            instantIsRegistered = true;
+        }
         /// USER INTERFACE
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
             
@@ -277,6 +291,8 @@ public class FileDisplayActivity extends FileActivity implements
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        getContentResolver().unregisterContentObserver(instantUploadPhoto);
+        getContentResolver().unregisterContentObserver(instantUploadVideo);
         if (mDownloadConnection != null)
             unbindService(mDownloadConnection);
         if (mUploadConnection != null)
@@ -531,7 +547,6 @@ public class FileDisplayActivity extends FileActivity implements
             unregisterReceiver(mDownloadFinishReceiver);
             mDownloadFinishReceiver = null;
         }
-        
         Log_OC.d(TAG, "onPause() end");
     }
 

@@ -45,8 +45,8 @@ import com.owncloud.android.AccountUtils;
 import com.owncloud.android.Log_OC;
 import com.owncloud.android.R;
 import com.owncloud.android.db.DbHandler;
-import com.owncloud.android.files.InstantUploadBroadcastReceiver;
 import com.owncloud.android.files.services.FileUploader;
+import com.owncloud.android.network.ConnectionUtil;
 import com.owncloud.android.utils.FileStorageUtils;
 
 /**
@@ -75,6 +75,8 @@ public class InstantUploadActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.failed_upload_files);
+        
+        
 
         Button delete_all_btn = (Button) findViewById(R.id.failed_upload_delete_all_btn);
         delete_all_btn.setOnClickListener(getDeleteListner());
@@ -412,13 +414,11 @@ public class InstantUploadActivity extends Activity {
 
     private OnClickListener getImageButtonOnClickListener(final String img_path) {
         return new OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 startUpload(img_path);
                 loadListView(true);
             }
-
         };
     }
 
@@ -430,7 +430,7 @@ public class InstantUploadActivity extends Activity {
     private void startUpload(String img_path) {
         // extract filename
         String filename = FileStorageUtils.getInstantUploadFilePath(this, img_path);
-        if (canInstantUpload()) {
+        if (ConnectionUtil.getInstance(getApplicationContext()).canInstantUpload()) {
             Account account = AccountUtils.getCurrentOwnCloudAccount(InstantUploadActivity.this);
             // add file again to upload queue
             DbHandler db = new DbHandler(InstantUploadActivity.this);
@@ -460,16 +460,4 @@ public class InstantUploadActivity extends Activity {
             toast.show();
         }
     }
-
-    private boolean canInstantUpload() {
-
-        if (!InstantUploadBroadcastReceiver.isOnline(this)
-                || (InstantUploadBroadcastReceiver.instantUploadViaWiFiOnly(this) && !InstantUploadBroadcastReceiver
-                        .isConnectedViaWiFi(this))) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
 }
