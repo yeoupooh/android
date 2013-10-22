@@ -84,7 +84,7 @@ import eu.alefzero.webdav.WebdavClient;
 
 public class FileUploader extends Service implements OnDatatransferProgressListener {
 
-    public static final String UPLOAD_FINISH_MESSAGE = "UPLOAD_FINISH";
+    public static final String UPLOAD_FINISH_MESSAGE = "com.edifire.android.files.services.FileUploader.UPLOAD_FINISH";
     public static final String EXTRA_UPLOAD_RESULT = "RESULT";
     public static final String EXTRA_REMOTE_PATH = "REMOTE_PATH";
     public static final String EXTRA_OLD_REMOTE_PATH = "OLD_REMOTE_PATH";

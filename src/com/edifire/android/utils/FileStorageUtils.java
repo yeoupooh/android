@@ -38,7 +38,7 @@ public class FileStorageUtils {
 
     public static final String getSavePath(String accountName) {
         File sdCard = Environment.getExternalStorageDirectory();
-        return sdCard.getAbsolutePath() + "/owncloud/" + Uri.encode(accountName, "@");
+        return sdCard.getAbsolutePath() + "/edifire/" + Uri.encode(accountName, "@");
         // URL encoding is an 'easy fix' to overcome that NTFS and FAT32 don't allow ":" in file names, that can be in the accountName since 0.1.190B
     }
 
@@ -48,7 +48,7 @@ public class FileStorageUtils {
 
     public static final String getTemporalPath(String accountName) {
         File sdCard = Environment.getExternalStorageDirectory();
-        return sdCard.getAbsolutePath() + "/owncloud/tmp/" + Uri.encode(accountName, "@");
+        return sdCard.getAbsolutePath() + "/edifire/tmp/" + Uri.encode(accountName, "@");
             // URL encoding is an 'easy fix' to overcome that NTFS and FAT32 don't allow ":" in file names, that can be in the accountName since 0.1.190B
     }
 
@@ -66,7 +66,7 @@ public class FileStorageUtils {
     }
     
     public static final String getLogPath()  {
-        return Environment.getExternalStorageDirectory() + File.separator + "owncloud" + File.separator + "log";
+        return Environment.getExternalStorageDirectory() + File.separator + "edifire" + File.separator + "log";
     }
 
     public static String getInstantUploadFilePath(Context context, String fileName) {

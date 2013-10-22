@@ -84,7 +84,7 @@ public class Log_OC {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss",Locale.getDefault());
         String currentDateandTime = sdf.format(new Date());
         if (logFile != null) {
-            logFile.renameTo(new File(folder+File.separator+"Owncloud_"+currentDateandTime+".log"));
+            logFile.renameTo(new File(folder+File.separator+"Edifire_"+currentDateandTime+".log"));
           
             isEnabled = false;
             try {

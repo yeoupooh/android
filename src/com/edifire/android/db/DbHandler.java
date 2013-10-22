@@ -34,7 +34,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DbHandler {
     private SQLiteDatabase mDB;
     private OpenerHelper mHelper;
-    private final String mDatabaseName = "ownCloud";
+    private final String mDatabaseName = "edifire";
     private final int mDatabaseVersion = 3;
 
     private final String TABLE_INSTANT_UPLOAD = "instant_upload";

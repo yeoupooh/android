@@ -28,8 +28,8 @@ import android.provider.BaseColumns;
  */
 public class ProviderMeta {
 
-    public static final String AUTHORITY_FILES = "org.owncloud";
-    public static final String DB_FILE = "owncloud.db";
+    public static final String AUTHORITY_FILES = "com.edifire";
+    public static final String DB_FILE = "edifire.db";
     public static final String DB_NAME = "filelist";
     public static final int DB_VERSION = 4;
 
