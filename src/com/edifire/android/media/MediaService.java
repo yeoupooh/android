@@ -41,7 +41,7 @@ import com.edifire.android.Log_OC;
 import com.edifire.android.datamodel.OCFile;
 import com.edifire.android.ui.activity.FileActivity;
 import com.edifire.android.ui.activity.FileDisplayActivity;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 /**
  * Service that handles media playback, both audio and video. 

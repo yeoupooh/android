@@ -33,7 +33,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.Toast;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 /**
  * This activity is used as a landing page when the user first opens this app.

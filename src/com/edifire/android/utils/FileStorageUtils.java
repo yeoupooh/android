@@ -26,7 +26,7 @@ import android.os.Environment;
 import android.os.StatFs;
 
 import com.edifire.android.datamodel.OCFile;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 /**
  * Static methods to help in access to local file system.

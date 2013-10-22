@@ -42,7 +42,7 @@ import com.edifire.android.ui.fragment.LocalFileListFragment;
 import com.edifire.android.ui.fragment.ConfirmationDialogFragment.ConfirmationDialogFragmentListener;
 import com.edifire.android.utils.FileStorageUtils;
 
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 /**
  * Displays local files and let the user choose what of them wants to upload

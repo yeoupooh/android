@@ -41,7 +41,7 @@ import com.edifire.android.ui.dialog.EditNameDialog.EditNameDialogListener;
 import com.edifire.android.ui.fragment.ConfirmationDialogFragment.ConfirmationDialogFragmentListener;
 import com.edifire.android.ui.preview.PreviewImageFragment;
 import com.edifire.android.ui.preview.PreviewMediaFragment;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 import android.accounts.Account;
 import android.app.Activity;

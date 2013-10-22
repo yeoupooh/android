@@ -49,7 +49,7 @@ import com.edifire.android.ui.activity.FileDisplayActivity;
 import com.edifire.android.ui.dialog.LoadingDialog;
 import com.edifire.android.ui.fragment.FileFragment;
 
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 /**
  *  Holds a swiping galley where image files contained in an ownCloud directory are shown

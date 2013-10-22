@@ -78,7 +78,7 @@ import android.os.Process;
 import android.webkit.MimeTypeMap;
 import android.widget.RemoteViews;
 
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 import eu.alefzero.webdav.WebdavClient;
 

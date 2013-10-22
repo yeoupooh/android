@@ -38,7 +38,7 @@ import com.edifire.android.datamodel.FileDataStorageManager;
 import com.edifire.android.datamodel.OCFile;
 import com.edifire.android.media.MediaService;
 import com.edifire.android.ui.activity.FileActivity;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 /**
  *  Activity implementing a basic video player.

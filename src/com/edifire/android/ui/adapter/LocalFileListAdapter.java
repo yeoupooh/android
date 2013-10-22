@@ -22,7 +22,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 import com.edifire.android.DisplayUtils;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 import android.content.Context;
 import android.view.LayoutInflater;

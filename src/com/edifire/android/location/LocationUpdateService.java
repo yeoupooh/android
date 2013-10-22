@@ -30,7 +30,7 @@ import android.preference.PreferenceManager;
 import android.widget.Toast;
 
 import com.edifire.android.Log_OC;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 public class LocationUpdateService extends IntentService implements
         LocationListener {

@@ -38,7 +38,7 @@ import com.edifire.android.operations.UpdateOCVersionOperation;
 import com.edifire.android.operations.RemoteOperationResult.ResultCode;
 import com.edifire.android.ui.activity.ErrorsWhileCopyingHandlerActivity;
 import com.edifire.android.utils.FileStorageUtils;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 import android.accounts.Account;
 import android.accounts.AccountsException;

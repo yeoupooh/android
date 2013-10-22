@@ -88,7 +88,7 @@ import com.edifire.android.ui.preview.PreviewImageActivity;
 import com.edifire.android.ui.preview.PreviewImageFragment;
 import com.edifire.android.ui.preview.PreviewMediaFragment;
 import com.edifire.android.ui.preview.PreviewVideoActivity;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 /**
  * Displays, what files the user has available in his ownCloud.

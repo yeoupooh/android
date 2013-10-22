@@ -53,7 +53,7 @@ import com.edifire.android.authentication.AccountUtils;
 import com.edifire.android.authentication.AuthenticatorActivity;
 import com.edifire.android.ui.activity.FileActivity.AccountCreationCallback;
 
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 public class AccountSelectActivity extends SherlockListActivity implements
         AccountManagerCallback<Boolean> {

@@ -20,7 +20,7 @@ import java.util.Arrays;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;

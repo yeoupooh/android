@@ -61,7 +61,7 @@ import android.os.Message;
 import android.os.Process;
 import android.widget.RemoteViews;
 
-import com.owncloud.android.R;
+import com.edifire.android.R;
 import eu.alefzero.webdav.WebdavClient;
 
 public class FileDownloader extends Service implements OnDatatransferProgressListener {

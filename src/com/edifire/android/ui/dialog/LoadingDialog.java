@@ -1,6 +1,6 @@
 package com.edifire.android.ui.dialog;
 
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 import android.app.Dialog;
 import android.os.Bundle;

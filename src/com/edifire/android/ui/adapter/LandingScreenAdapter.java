@@ -29,7 +29,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 /**
  * Populates the landing screen icons.

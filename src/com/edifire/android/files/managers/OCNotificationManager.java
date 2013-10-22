@@ -26,7 +26,7 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.widget.RemoteViews;
 
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 public class OCNotificationManager {
 

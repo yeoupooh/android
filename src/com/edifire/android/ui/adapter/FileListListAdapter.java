@@ -35,7 +35,7 @@ import com.edifire.android.datamodel.OCFile;
 import com.edifire.android.files.services.FileDownloader.FileDownloaderBinder;
 import com.edifire.android.files.services.FileUploader.FileUploaderBinder;
 import com.edifire.android.ui.activity.TransferServiceGetter;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 import java.util.Vector;
 

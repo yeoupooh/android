@@ -36,7 +36,7 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 /**
  * Popup window, shows action list as icon and text like the one in Gallery3D

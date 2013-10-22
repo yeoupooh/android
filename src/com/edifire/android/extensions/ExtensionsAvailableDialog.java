@@ -19,7 +19,7 @@
 package com.edifire.android.extensions;
 
 import com.edifire.android.Log_OC;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;

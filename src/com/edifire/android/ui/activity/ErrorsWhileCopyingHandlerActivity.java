@@ -44,7 +44,7 @@ import com.edifire.android.datamodel.FileDataStorageManager;
 import com.edifire.android.datamodel.OCFile;
 import com.edifire.android.ui.dialog.IndeterminateProgressDialog;
 import com.edifire.android.utils.FileStorageUtils;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 
 /**

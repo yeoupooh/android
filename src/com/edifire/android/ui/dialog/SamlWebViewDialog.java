@@ -38,7 +38,7 @@ import com.actionbarsherlock.app.SherlockDialogFragment;
 import com.edifire.android.Log_OC;
 import com.edifire.android.authentication.SsoWebViewClient;
 import com.edifire.android.authentication.SsoWebViewClient.SsoWebViewClientListener;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 import eu.alefzero.webdav.WebdavClient;
 

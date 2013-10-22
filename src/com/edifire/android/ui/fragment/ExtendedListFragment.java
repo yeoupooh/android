@@ -21,7 +21,7 @@ package com.edifire.android.ui.fragment;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.edifire.android.Log_OC;
 import com.edifire.android.ui.ExtendedListView;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

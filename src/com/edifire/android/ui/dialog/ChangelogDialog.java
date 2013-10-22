@@ -31,7 +31,7 @@ import android.webkit.WebView;
 import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockDialogFragment;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 /**
  * Dialog to show the contents of res/raw/CHANGELOG.txt

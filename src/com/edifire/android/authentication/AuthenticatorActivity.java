@@ -65,7 +65,7 @@ import com.edifire.android.ui.dialog.SamlWebViewDialog;
 import com.edifire.android.ui.dialog.SslValidatorDialog;
 import com.edifire.android.ui.dialog.SslValidatorDialog.OnSslValidatorListener;
 import com.edifire.android.utils.OwnCloudVersion;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 import eu.alefzero.webdav.WebdavClient;
 

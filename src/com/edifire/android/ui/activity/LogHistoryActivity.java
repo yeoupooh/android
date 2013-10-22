@@ -34,7 +34,7 @@ import com.actionbarsherlock.app.SherlockPreferenceActivity;
 import com.actionbarsherlock.view.MenuItem;
 import com.edifire.android.ui.adapter.LogListAdapter;
 import com.edifire.android.utils.FileStorageUtils;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 
 

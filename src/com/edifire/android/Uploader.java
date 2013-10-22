@@ -60,7 +60,7 @@ import com.edifire.android.datamodel.FileDataStorageManager;
 import com.edifire.android.datamodel.OCFile;
 import com.edifire.android.files.services.FileUploader;
 
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 /**
  * This can be used to upload things to an ownCloud instance.

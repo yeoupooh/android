@@ -47,7 +47,7 @@ import com.edifire.android.db.DbHandler;
 import com.edifire.android.files.InstantUploadBroadcastReceiver;
 import com.edifire.android.files.services.FileUploader;
 import com.edifire.android.utils.FileStorageUtils;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 /**
  * This Activity is used to display a list with images they could not be

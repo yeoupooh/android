@@ -40,7 +40,7 @@ import com.actionbarsherlock.view.MenuItem;
 import com.edifire.android.Log_OC;
 import com.edifire.android.OwnCloudSession;
 import com.edifire.android.db.DbHandler;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 /**
  * An Activity that allows the user to change the application's settings.

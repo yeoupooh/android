@@ -26,7 +26,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 /**
  * Used on the Landing page to display what Components of the ownCloud there

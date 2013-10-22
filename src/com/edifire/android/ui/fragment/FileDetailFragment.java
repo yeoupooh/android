@@ -64,7 +64,7 @@ import com.edifire.android.ui.activity.FileDisplayActivity;
 import com.edifire.android.ui.dialog.EditNameDialog;
 import com.edifire.android.ui.dialog.EditNameDialog.EditNameDialogListener;
 import com.edifire.android.ui.preview.PreviewImageFragment;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 import eu.alefzero.webdav.OnDatatransferProgressListener;
 

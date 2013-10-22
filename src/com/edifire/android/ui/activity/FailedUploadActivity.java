@@ -24,7 +24,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 /**
  * This Activity is used to display a detail message for failed uploads

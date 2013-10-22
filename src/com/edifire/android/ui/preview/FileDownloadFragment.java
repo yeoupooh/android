@@ -36,7 +36,7 @@ import com.edifire.android.datamodel.OCFile;
 import com.edifire.android.files.services.FileDownloader.FileDownloaderBinder;
 import com.edifire.android.ui.fragment.FileFragment;
 
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 import eu.alefzero.webdav.OnDatatransferProgressListener;
 

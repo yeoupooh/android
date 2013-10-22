@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 
 public class LogListAdapter extends ArrayAdapter<String> {

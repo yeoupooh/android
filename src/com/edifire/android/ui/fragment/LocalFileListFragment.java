@@ -33,7 +33,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 /**
  * A Fragment that lists all files and folders in a given LOCAL path.

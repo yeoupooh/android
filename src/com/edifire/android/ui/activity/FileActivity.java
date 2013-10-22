@@ -33,7 +33,7 @@ import com.edifire.android.Log_OC;
 import com.edifire.android.authentication.AccountAuthenticator;
 import com.edifire.android.authentication.AccountUtils;
 import com.edifire.android.datamodel.OCFile;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 import eu.alefzero.webdav.WebdavUtils;
 

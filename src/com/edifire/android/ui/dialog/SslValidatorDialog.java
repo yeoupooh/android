@@ -41,7 +41,7 @@ import com.edifire.android.Log_OC;
 import com.edifire.android.network.CertificateCombinedException;
 import com.edifire.android.network.OwnCloudClientUtils;
 import com.edifire.android.operations.RemoteOperationResult;
-import com.owncloud.android.R;
+import com.edifire.android.R;
 
 /**
  * Dialog to request the user about a certificate that could not be validated with the certificates store in the system.

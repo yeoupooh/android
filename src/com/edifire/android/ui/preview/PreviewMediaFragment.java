@@ -67,7 +67,7 @@ import com.edifire.android.ui.activity.FileDisplayActivity;
 import com.edifire.android.ui.fragment.ConfirmationDialogFragment;
 import com.edifire.android.ui.fragment.FileFragment;
 
-import com.owncloud.android.R;
+import com.edifire.android.R;
 import eu.alefzero.webdav.WebdavUtils;
 
 /**
