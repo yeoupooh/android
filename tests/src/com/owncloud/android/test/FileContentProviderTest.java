@@ -1,7 +1,7 @@
-package com.owncloud.android.test;
+package com.edifire.android.test;
 
-import com.owncloud.android.db.ProviderMeta.ProviderTableMeta;
-import com.owncloud.android.providers.FileContentProvider;
+import com.edifire.android.db.ProviderMeta.ProviderTableMeta;
+import com.edifire.android.providers.FileContentProvider;
 
 import android.annotation.TargetApi;
 import android.net.Uri;
@@ -24,7 +24,7 @@ public class FileContentProviderTest extends ProviderTestCase2<FileContentProvid
 	}
 	
 	public FileContentProviderTest() {
-		super(FileContentProvider.class, "com.owncloud.android.providers.FileContentProvider");
+		super(FileContentProvider.class, "com.edifire.android.providers.FileContentProvider");
 	}
 	
 	@Override

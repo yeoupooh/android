@@ -41,11 +41,11 @@ import org.apache.commons.httpclient.params.HttpMethodParams;
 import org.apache.http.HttpStatus;
 import org.apache.http.params.CoreProtocolPNames;
 
-import com.owncloud.android.Log_OC;
+import com.edifire.android.Log_OC;
+import com.edifire.android.authentication.AccountAuthenticator;
+import com.edifire.android.network.BearerAuthScheme;
+import com.edifire.android.network.BearerCredentials;
 
-import com.owncloud.android.authentication.AccountAuthenticator;
-import com.owncloud.android.network.BearerAuthScheme;
-import com.owncloud.android.network.BearerCredentials;
 
 import android.net.Uri;
 
