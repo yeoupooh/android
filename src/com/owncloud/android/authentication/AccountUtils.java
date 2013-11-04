@@ -41,22 +41,21 @@ public class AccountUtils {
      * Can be used to get the currently selected ownCloud {@link Account} in the
      * application preferences.
      * 
-     * @param   context     The current application {@link Context}
-     * @return              The ownCloud {@link Account} currently saved in preferences, or the first 
-     *                      {@link Account} available, if valid (still registered in the system as ownCloud 
-     *                      account). If none is available and valid, returns null.
+     * @param context The current application {@link Context}
+     * @return The ownCloud {@link Account} currently saved in preferences, or
+     *         the first {@link Account} available, if valid (still registered
+     *         in the system as ownCloud account). If none is available and
+     *         valid, returns null.
      */
     public static Account getCurrentOwnCloudAccount(Context context) {
-        Account[] ocAccounts = AccountManager.get(context).getAccountsByType(
-                AccountAuthenticator.ACCOUNT_TYPE);
+        Account[] ocAccounts = AccountManager.get(context).getAccountsByType(AccountAuthenticator.ACCOUNT_TYPE);
         Account defaultAccount = null;
 
-        SharedPreferences appPreferences = PreferenceManager
-                .getDefaultSharedPreferences(context);
-        String accountName = appPreferences
-                .getString("select_oc_account", null);
+        SharedPreferences appPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        String accountName = appPreferences.getString("select_oc_account", null);
 
-        // account validation: the saved account MUST be in the list of ownCloud Accounts known by the AccountManager
+        // account validation: the saved account MUST be in the list of ownCloud
+        // Accounts known by the AccountManager
         if (accountName != null) {
             for (Account account : ocAccounts) {
                 if (account.name.equals(accountName)) {
@@ -65,7 +64,7 @@ public class AccountUtils {
                 }
             }
         }
-        
+
         if (defaultAccount == null && ocAccounts.length != 0) {
             // take first account as fallback
             defaultAccount = ocAccounts[0];
@@ -74,10 +73,8 @@ public class AccountUtils {
         return defaultAccount;
     }
 
-    
     public static boolean exists(Account account, Context context) {
-        Account[] ocAccounts = AccountManager.get(context).getAccountsByType(
-                AccountAuthenticator.ACCOUNT_TYPE);
+        Account[] ocAccounts = AccountManager.get(context).getAccountsByType(AccountAuthenticator.ACCOUNT_TYPE);
 
         if (account != null && account.name != null) {
             for (Account ac : ocAccounts) {
@@ -88,7 +85,6 @@ public class AccountUtils {
         }
         return false;
     }
-    
 
     /**
      * Checks, whether or not there are any ownCloud accounts setup.
@@ -97,25 +93,21 @@ public class AccountUtils {
      */
     public static boolean accountsAreSetup(Context context) {
         AccountManager accMan = AccountManager.get(context);
-        Account[] accounts = accMan
-                .getAccountsByType(AccountAuthenticator.ACCOUNT_TYPE);
+        Account[] accounts = accMan.getAccountsByType(AccountAuthenticator.ACCOUNT_TYPE);
         return accounts.length > 0;
     }
-    
-    
+
     public static boolean setCurrentOwnCloudAccount(Context context, String accountName) {
         boolean result = false;
         if (accountName != null) {
-            Account[] ocAccounts = AccountManager.get(context).getAccountsByType(
-                    AccountAuthenticator.ACCOUNT_TYPE);
+            Account[] ocAccounts = AccountManager.get(context).getAccountsByType(AccountAuthenticator.ACCOUNT_TYPE);
             boolean found = false;
             for (Account account : ocAccounts) {
                 found = (account.name.equals(accountName));
                 if (found) {
-                    SharedPreferences.Editor appPrefs = PreferenceManager
-                            .getDefaultSharedPreferences(context).edit();
+                    SharedPreferences.Editor appPrefs = PreferenceManager.getDefaultSharedPreferences(context).edit();
                     appPrefs.putString("select_oc_account", accountName);
-    
+
                     appPrefs.commit();
                     result = true;
                     break;
@@ -123,6 +115,11 @@ public class AccountUtils {
             }
         }
         return result;
+    }
+
+    // FIXME: This is an workaround to remove errors.
+    public static String getWebdavPath(OwnCloudVersion version, boolean supportsOAuth) {
+        return getWebdavPath(version, supportsOAuth, false);
     }
 
     /**
@@ -148,14 +145,16 @@ public class AccountUtils {
         }
         return null;
     }
-    
+
     /**
-     * Returns the proper URL path to access the WebDAV interface of an ownCloud server,
-     * according to its version and the authorization method used.
+     * Returns the proper URL path to access the WebDAV interface of an ownCloud
+     * server, according to its version and the authorization method used.
      * 
-     * @param   version         Version of ownCloud server.
-     * @param   authTokenType   Authorization token type, matching some of the AUTH_TOKEN_TYPE_* constants in {@link AccountAuthenticator}. 
-     * @return                  WebDAV path for given OC version and authorization method, null if OC version is unknown.
+     * @param version Version of ownCloud server.
+     * @param authTokenType Authorization token type, matching some of the
+     *            AUTH_TOKEN_TYPE_* constants in {@link AccountAuthenticator}.
+     * @return WebDAV path for given OC version and authorization method, null
+     *         if OC version is unknown.
      */
     public static String getWebdavPath(OwnCloudVersion version, String authTokenType) {
         if (version != null) {
@@ -175,42 +174,43 @@ public class AccountUtils {
         }
         return null;
     }
-    
+
     /**
      * Constructs full url to host and webdav resource basing on host version
+     * 
      * @param context
      * @param account
      * @return url or null on failure
-     * @throws AccountNotFoundException     When 'account' is unknown for the AccountManager
+     * @throws AccountNotFoundException When 'account' is unknown for the
+     *             AccountManager
      */
     public static String constructFullURLForAccount(Context context, Account account) throws AccountNotFoundException {
         AccountManager ama = AccountManager.get(context);
         String baseurl = ama.getUserData(account, AccountAuthenticator.KEY_OC_BASE_URL);
-        String strver  = ama.getUserData(account, AccountAuthenticator.KEY_OC_VERSION);
+        String strver = ama.getUserData(account, AccountAuthenticator.KEY_OC_VERSION);
         boolean supportsOAuth = (ama.getUserData(account, AccountAuthenticator.KEY_SUPPORTS_OAUTH2) != null);
         boolean supportsSamlSso = (ama.getUserData(account, AccountAuthenticator.KEY_SUPPORTS_SAML_WEB_SSO) != null);
         OwnCloudVersion ver = new OwnCloudVersion(strver);
         String webdavpath = getWebdavPath(ver, supportsOAuth, supportsSamlSso);
 
-        if (baseurl == null || webdavpath == null) 
+        if (baseurl == null || webdavpath == null)
             throw new AccountNotFoundException(account, "Account not found", null);
-        
+
         return baseurl + webdavpath;
     }
-    
-    
+
     public static class AccountNotFoundException extends AccountsException {
-        
+
         /** Generated - should be refreshed every time the class changes!! */
         private static final long serialVersionUID = -9013287181793186830L;
-        
-        private Account mFailedAccount; 
-                
+
+        private Account mFailedAccount;
+
         public AccountNotFoundException(Account failedAccount, String message, Throwable cause) {
             super(message, cause);
             mFailedAccount = failedAccount;
         }
-        
+
         public Account getFailedAccount() {
             return mFailedAccount;
         }
